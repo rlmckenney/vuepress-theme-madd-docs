@@ -1,0 +1,125 @@
+/**
+ * Custom Styles here.
+ *
+ * ref：https://v1.vuepress.vuejs.org/config/#index-styl
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Literata:400,400i,600,700|Open+Sans:400,600,700&display=swap');
+$font-system = -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+$font-headings = 'Literata', $font-system
+$font-body = 'Open Sans', $font-system
+$font-quote = $font-headings
+
+body
+  font-family $font-body
+
+h1, h2, h3, h4, h5, h6
+  font-family $font-headings
+  font-weight 700
+h1
+  color $acGreen80
+
+strong
+  font-weight 700
+
+a
+  font-weight 600
+  color $accentColor
+  text-decoration none
+
+blockquote 
+  font-size 20px
+  font-weight 400
+  font-family $font-quote
+  color $acCharcoal60
+  border-left 0.2rem solid $acCharcoal50
+  margin 1rem 0
+  padding 0.25rem 0 0.25rem 1rem
+
+  cite
+    font-style italic
+    color $acGreen60
+    display block
+    margin-top 0.5em
+    &::before
+      content '— '
+
+.home .hero img
+  max-width 450px!important
+
+.screenshot
+  box-shadow 0px 1px 5px 0px rgba(0,0,0,.23)
+  border-radius .25rem
+
+.sidebar
+  background-color: $acCharcoal02
+  font-family: $font-body
+
+.navbar
+  font-family $font-body
+  background-color $acGreen100
+  color #ffffff
+  border-bottom none
+  box-shadow 0px 2px 5px 0px rgba(0,0,0,0.12)
+
+  a.home-link .site-name
+    color #ffffff
+    font-family $font-body
+
+  & > div.links
+    background-color $acGreen100
+    color $acGreen25
+    a
+      font-weight 500
+      text-transform uppercase
+      letter-spacing 0.5px
+
+  .icon.outbound
+    color inherit
+
+  .nav-item > a:hover
+  .nav-item > a:not(.external):hover
+    color: #ffffff
+    border-bottom 2px solid #ffffff
+  
+  .nav-item > a:not(.external).router-link-active
+    color $acGreen10
+    border-bottom 2px solid $acGreen10
+  
+  .search-box input
+    background hsla(159, 100%, 16%, 1) url('~@theme/styles/search-icon.svg') 0.6rem 0.7rem no-repeat
+    color $acGreen10
+    font-weight 700
+    border none
+    box-shadow:
+      0 1px 0 hsla(0, 0%, 100%, .15),
+      inset 0 2px 2px hsla(0, 0%, 0%, .1)
+    &:focus
+      background-color hsla(159, 20%, 86%, 1)
+      color: $acDarkGreen
+
+.custom-block
+  font-family $font-body
+  &.tip
+    border-color $acNewGrowth
+
+.badge.tip
+  background-color $acGreen60
+
+@media (max-width: $MQMobile)
+  .navbar
+    padding-left 4rem
+    .can-hide
+      display none
+    & > .links
+      padding-left 1rem
+
+
+// Transition Classes
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .75s, transform .3s ease-out;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+  transform: translateY(1rem);
+}
